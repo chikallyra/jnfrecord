@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JnF Dichive - Group Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Fredoka:wght@400;600&family=Pacifico&family=Lilita+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/modak@5.0.0/index.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-accent text-primary px-4 py-7 relative z-30">
+    <div class="max-w-7xl mx-auto flex justify-between items-center font-brand text-xl tracking-wider px-4 md:px-10">
+        
+        <div id="left-menu" class="hidden md:flex items-center gap-8 md:gap-16 lg:gap-32">
+            <a href="#main" class="hover:text-darkGrey transition">Home</a>
+            <a href="#popSection" class="hover:text-darkGrey transition">POP!</a>
+        </div>
+        
+        <div class="absolute left-1/2 transform -translate-x-1/2 cursor-pointer z-50" id="logo-toggle">
+            <div class="bg-primary rounded-full w-20 h-12 md:w-24 md:h-16 flex items-center justify-center border-2 border-accent shadow-md transition-transform hover:scale-110 active:scale-95">
+                <img src="img/logo.png" alt="JnF Logo" class="w-14 h-14 md:w-16 md:h-16 object-contain">
+            </div>
+        </div>
+
+        <div id="right-menu" class="hidden md:flex items-center gap-8 md:gap-16 lg:gap-32">
+            <a href="#album" class="hover:text-darkGrey transition">Album</a>
+            <a href="#" class="hover:text-darkGrey transition">Suprise</a>
+        </div>
+    </div>
+
+        <div id="mobile-dropdown" class="hidden absolute font-brand top-full left-0 w-full bg-accent border-t-2 border-white/20 shadow-xl flex flex-col items-center gap-6 py-8 md:hidden animate-fade-in">
+            <a href="#main" class="hover:text-darkGrey transition text-5md">Home</a>
+            <a href="#popSection" class="hover:text-darkGrey transition text-5md">POP!</a>
+            <a href="#" class="hover:text-darkGrey transition text-5md">Album</a>
+            <a href="#" class="hover:text-darkGrey transition text-5md">Suprise</a>
+        </div>
+    </nav>
+
+    <!-- Scallop Divider -->
+    <div class="scallop-divider"></div>
+
+    <!-- Main Content -->
+    <main class="relative max-w-7xl mx-auto mt-7 md:mt-7 px-6 my-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-12" id="main">
+        
+        <div class="md:w-1/2 text-left animate-fade-in z-10">
+            <h1 class="font-brand text-6xl md:text-7xl leading-tight text-strawberry drop-shadow-sm">
+                Welcome <span class="text-primary italic font-brand text-5xl md:text-6xl lowercase">to</span><br>
+                JnF <span class="text-primary">Dichive</span>
+            </h1>
+            <p class="mt-6 text-primary text-xl font-medium max-w-sm">
+                website ini dibuat agar kita terus...<br>
+                <span class="opacity-80 italic">lorem ipsum dolor si amet</span>
+            </p>
+        </div>
+
+        <div class="md:w-1/3 w-full bg-primary p-6 rounded-2xl nutrition-label border-2 border-gray-200">
+            <div class="border-b-4 border-black pb-1 mb-2">
+                <h2 class="text-3xl font-black text-center font-nutrition tracking-tighter">Nutrition Facts</h2>
+            </div>
+            <div class="border-b-2 border-black mb-1 flex justify-between font-bold font-sans">
+                <span>Serving Size:</span>
+                <span>One Group</span>
+            </div>
+            <div class="text-right text-xs font-bold border-b-4 border-black mb-1 font-sans">
+                % Daily Value*
+            </div>
+            
+            <!-- Rows -->
+            <div class="flex justify-between items-center border-b border-gray-400 py-1 font-brand text-2xl">
+                <span>LOVE</span>
+                <span class="font-bold">100%</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-400 py-1 font-brand text-2xl">
+                <span>CARE</span>
+                <span class="font-bold">100%</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-400 py-1 font-brand text-2xl">
+                <span>HATE</span>
+                <span class="font-bold">0,20%</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-400 py-1 font-brand text-2xl">
+                <span>TRUST</span>
+                <span class="font-bold">100%</span>
+            </div>
+            <div class="flex justify-between items-center border-b-8 border-black py-1 font-brand text-2xl">
+                <span>JOKES</span>
+                <span class="font-bold">101%</span>
+            </div>
+            <p class="text-[10px] mt-2 leading-tight font-sans">
+                *Persen Nilai Harian berdasarkan kebersamaan yang tidak terbatas. Nilai harian Anda mungkin lebih tinggi atau rendah tergantung frekuensi nongkrong.
+            </p>
+        </div>
+
+        <div class="w-full md:w-auto flex justify-center md:absolute md:left-1/2 md:-translate-x-1/2 md:bottom-[-0.5%] z-20">
+            <button 
+                id="heartButton"
+                class="kancing-active kancing-shadow transition-transform duration-200 ease-out outline-none animate-bounce"
+            >
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#f06292" stroke="#d81b60" stroke-width="0.5"/>
+                    <path d="M12 18.5l-1-0.9C6.5 13.5 4 11 4 8.5 4 6.5 5.5 5 7.5 5c1.2 0 2.3 0.6 3 1.5 0.7-0.9 1.8-1.5 3-1.5 2 0 3.5 1.5 3.5 3.5 0 2.5-2.5 5-7 9.1l-1 0.9z" fill="#ec407a" opacity="0.5"/>
+                    <circle cx="9.5" cy="8.5" r="0.8" fill="#880e4f" fill-opacity="0.6" />
+                    <circle cx="14.5" cy="8.5" r="0.8" fill="#880e4f" fill-opacity="0.6" />
+                    <circle cx="9.5" cy="11.5" r="0.8" fill="#880e4f" fill-opacity="0.6" />
+                    <circle cx="14.5" cy="11.5" r="0.8" fill="#880e4f" fill-opacity="0.6" />
+                    <line x1="9.5" y1="8.5" x2="14.5" y2="11.5" stroke="#880e4f" stroke-width="0.2" opacity="0.4" />
+                    <line x1="14.5" y1="8.5" x2="9.5" y2="11.5" stroke="#880e4f" stroke-width="0.2" opacity="0.4" />
+                </svg>
+            </button>
+        </div>
+    </main>
+
+    <!-- SECTION 2: POP! (CHOOSE YOUR POP!) -->
+    <section id="popSection" class="relative py-20 min-h-screen overflow-hidden">
+        <div class="absolute inset-0 bg-primary z-0"></div>
+        
+        <!-- Background Bergerak Menyerong (JPG/PNG Pattern) -->
+        <div class="absolute inset-0 moving-bg-image opacity-70 animate-moving-diagonal z-10"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <!-- Title POP -->
+            <div class="text-center mb-16">
+                <h2 class="font-pop text-6xl md:text-8xl text-red-600 drop-shadow-[4px_4px_0px_#fff] uppercase tracking-wide italic">
+                    CHOOSE YOUR POP!
+                </h2>
+            </div>
+
+            <!-- Figure Grid (Wadah Figur) -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-8">
+
+                <!-- Figur 1 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/najwa/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Najwa
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 2 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/hana/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Hana
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 3 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/fatim/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Fatim
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 4 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/chikal/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Chikal
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 5 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/yussie/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Yussie
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 6 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/elsya/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Elsya
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 7 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/7.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Alfonsa
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 8 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/resa/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Resa
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 9 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/della/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Della
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figur 10 -->
+                <div class="figure-card flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
+                        <img src="img/maya/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
+                    </div>
+                    <div class="absolute -top-12 -right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-50 group-hover:scale-110 pointer-events-none z-50">
+                        <div class="bg-burahay text-white px-8 py-8 flex items-center justify-center text-sm font-bold shadow-xl"
+                            style="clip-path: polygon(50% 0%, 61% 14%, 78% 9%, 81% 26%, 98% 28%, 91% 44%, 100% 60%, 86% 70%, 89% 87%, 72% 86%, 64% 100%, 50% 90%, 36% 100%, 28% 86%, 11% 87%, 14% 70%, 0% 60%, 9% 44%, 2% 28%, 19% 26%, 22% 9%, 39% 14%);">
+                            Maya
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ALBUM -->
+    <section id="album" class="bg-primary py-24 px-6 flex justify-center items-center">
+        <div class="w-full max-w-5xl bg-[#ece6e6] rounded-xl shadow-2xl overflow-hidden border border-gray-300">
+            <div class="bg-[#f3f0f0] px-6 py-4 flex justify-between items-center border-b border-gray-300">
+                <span class="font-os font-bold text-gray-700 text-lg">Open your album</span>
+                <div class="flex space-x-2">
+                    <div class="w-4 h-4 rounded-full bg-black"></div>
+                    <div class="w-4 h-4 rounded-full bg-black"></div>
+                    <div class="w-4 h-4 rounded-full bg-black"></div>
+                </div>
+            </div>
+            <div class="bg-secondary p-12 md:p-20">
+                <div id="folder-grid" class="grid grid-cols-2 md:grid-cols-5 gap-x-8 gap-y-16">
+                    <!-- Folder Items -->
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Yussie" data-color="#f472b6">
+                        <div class="relative w-24 h-16 bg-[#f472b6] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#f472b6]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Yussie</span>
+                    </div>
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Najwa" data-color="#c084fc">
+                        <div class="relative w-24 h-16 bg-[#c084fc] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#c084fc]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Najwa</span>
+                    </div>
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Maya" data-color="#fbbf24">
+                        <div class="relative w-24 h-16 bg-[#fbbf24] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#fbbf24]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Maya</span>
+                    </div>
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Hana" data-color="#fb923c">
+                        <div class="relative w-24 h-16 bg-[#fb923c] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#fb923c]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Hana</span>
+                    </div>
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Della" data-color="#f87171">
+                        <div class="relative w-24 h-16 bg-[#f87171] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#f87171]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Della</span>
+                    </div>
+
+                    <!-- Baris 2 -->
+                    <div class="md:col-span-5 grid grid-cols-2 md:grid-cols-4 gap-8 md:px-20 mt-4">
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Fatim" data-color="#4ade80">
+                        <div class="relative w-24 h-16 bg-[#4ade80] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#4ade80]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Fatim</span>
+                    </div>
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Ressa" data-color="#2dd4bf">
+                        <div class="relative w-24 h-16 bg-[#2dd4bf] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#2dd4bf]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Ressa</span>
+                    </div>
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Elsya" data-color="#38bdf8">
+                        <div class="relative w-24 h-16 bg-[#38bdf8] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#38bdf8]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Elsya</span>
+                    </div>
+                    <div class="folder-btn flex flex-col items-center group cursor-pointer" data-name="Chikal" data-color="#818cf8">
+                        <div class="relative w-24 h-16 bg-[#818cf8] rounded-r-lg rounded-bl-lg shadow-lg group-hover:scale-110 transition-transform">
+                            <div class="folder-tab bg-[#818cf8]"></div>
+                            <div class="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-lg"></div>
+                        </div>
+                        <span class="mt-3 font-os font-bold text-black text-sm">Chikal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- VIEW 2: GALLERY VIEW (Halaman Foto) -->
+    <div id="view-gallery" class="hidden-view min-h-screen bg-primary flex flex-col">
+        <div class="bg-accent p-6 flex items-center justify-between text-white shadow-md">
+            <button id="backBtn" class="flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                <span>Kembali</span>
+            </button>
+            <div class="flex flex-col items-center">
+                <h2 id="gallery-title" class="text-3xl font-brand drop-shadow-sm">Folder Name</h2>
+            </div>
+            <!-- Hidden File Input -->
+            <label class="cursor-pointer bg-secondary px-6 py-2 rounded-full font-bold shadow-lg hover:scale-105 transition">
+                + Tambah Foto
+                <input type="file" id="photo-upload" class="hidden" accept="image/*" multiple>
+            </label>
+        </div>
+
+        <!-- Area Foto -->
+        <div class="flex-grow p-8">
+            <div id="photo-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div id="empty-msg" class="col-span-full py-20 text-center">
+                    <div class="text-6xl mb-4">📸</div>
+                    <p class="text-gray-500 font-medium italic">Belum ada foto di folder ini. Klik tombol di atas untuk menambah foto lokal!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popSection" class="bg-primary h-screen mt-32 flex items-center justify-center">
+        <h2 class="text-4xl font-brand text-pink-300">Section Selanjutnya... ✨</h2>
+    </div>
+
+    <!-- Simple Footer/Decoration -->
+    <footer class="mt-20 h-80 text-center">
+        <p class="bg-accent text-white opacity-60 text-sm">Made with ❤️ by Chikal, Najwa, Hana</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
