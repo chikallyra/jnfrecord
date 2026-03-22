@@ -88,7 +88,54 @@ body {
     left: 0;
 }
 
-.hidden-view {
-    display: none !important;
+
+/* #view-gallery{
+    transition: opacity 0.3s ease;
 }
+
+.hidden{
+    opacity: 0;
+    pointer-events: none;
+}  */
+
+/* .hidden-view {
+    display: none !important;
+} */
+
+#album {
+    scroll-margin-top: 100px;
+}
+
+.view-transition {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hidden-view {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    display: none; 
+}
+
+#view-gallery.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 50;
+    display: flex;
+}
+
+#photo-modal {
+    backdrop-filter: blur(5px); /* Efek blur di belakang foto */
+    transition: opacity 0.3s ease;
+}
+
+#photo-modal.hidden {
+    display: none;
+    opacity: 0;
+}
+
+#modal-img {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 

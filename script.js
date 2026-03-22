@@ -82,18 +82,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const folderData = {};
 
     function showLanding() {
-        views.landing?.classList.remove('hidden-view', 'hidden');
-        views.gallery?.classList.add('hidden-view', 'hidden');
-        views.nav?.classList.remove('hidden-view', 'hidden');
-        views.scallop?.classList.remove('hidden-view', 'hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    // 1. Munculkan Landing & elemen pendukung
+    views.landing?.classList.remove('hidden', 'hidden-view');
+    views.nav?.classList.remove('hidden', 'hidden-view');
+    views.scallop?.classList.remove('hidden', 'hidden-view');
+
+    // 2. Sembunyikan Gallery
+    views.gallery?.classList.add('hidden', 'hidden-view');
+
+    // 3. Scroll ke area album
+    const albumSection = document.getElementById('album');
+    if (albumSection) {
+        albumSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
     }
 
     function showGallery(folderName) {
-        views.landing?.classList.add('hidden-view', 'hidden');
-        views.gallery?.classList.remove('hidden-view', 'hidden');
-        views.nav?.classList.add('hidden-view', 'hidden');
+        // 1. Sembunyikan Landing & elemen pendukung
+        views.landing?.classList.add('hidden', 'hidden-view');
+        views.nav?.classList.add('hidden', 'hidden-view');
         views.scallop?.classList.add('hidden-view', 'hidden');
+        
+        // 2. Munculkan Gallery
+        views.gallery?.classList.remove('hidden', 'hidden-view');
         
         if (views.title) views.title.innerText = folderName;
         renderPhotos(folderName);
@@ -143,4 +157,64 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.readAsDataURL(file);
         });
     });
+
+    // Tampil Foto
+    function renderPhotos(folderName) {
+        if (!views.grid) return;
+        views.grid.innerHTML = ''; 
+        
+        const folderPath = folderName.toLowerCase();
+        const modal = document.getElementById('photo-modal');
+        const modalImg = document.getElementById('modal-img');
+
+        for (let i = 1; i <= 15; i++) { 
+            const src = `img/${folderPath}/${i}.jpg`; 
+            const img = new Image();
+            img.src = src;
+
+            // Kuncinya ada di sini: Container baru dibuat kalau gambar BERHASIL diload
+            img.onload = () => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = "aspect-square bg-white p-2 shadow-md transform rotate-1 hover:rotate-0 hover:scale-105 transition-all cursor-zoom-in";
+                
+                img.className = "w-full h-full object-cover rounded-sm";
+                
+                // Efek Zoom
+                imgContainer.onclick = () => {
+                    modalImg.src = src;
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modalImg.classList.remove('scale-95'), 10);
+                };
+
+                imgContainer.appendChild(img);
+                views.grid.appendChild(imgContainer);
+            };
+            
+            // Opsional: Cek juga file .png kalau .jpg gak ada
+            img.onerror = () => {
+                const imgPng = new Image();
+                imgPng.src = `img/${folderPath}/${i}.png`;
+                imgPng.onload = () => {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = "aspect-square bg-white p-2 shadow-md transform rotate-1 hover:rotate-0 hover:scale-105 transition-all cursor-zoom-in";
+                    imgPng.className = "w-full h-full object-cover rounded-sm";
+                    imgContainer.onclick = () => {
+                        modalImg.src = imgPng.src;
+                        modal.classList.remove('hidden');
+                        setTimeout(() => modalImg.classList.remove('scale-95'), 10);
+                    };
+                    imgContainer.appendChild(imgPng);
+                    views.grid.appendChild(imgContainer);
+                }
+            };
+        }
+
+        // Modal click handler (cukup sekali aja di luar loop)
+        if (modal) {
+            modal.onclick = () => {
+                modalImg.classList.add('scale-95');
+                setTimeout(() => modal.classList.add('hidden'), 200);
+            };
+        }
+    }
 });

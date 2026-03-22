@@ -6,11 +6,12 @@
     <title>JnF Dichive - Group Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Fredoka:wght@400;600&family=Pacifico&family=Lilita+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_circle_left" /> -->
+     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/modak@5.0.0/index.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-body text-gray-800">
-
     <!-- Navbar -->
     <nav class="bg-accent text-primary px-4 py-7 relative z-30">
     <div class="max-w-7xl mx-auto flex justify-between items-center font-brand text-xl tracking-wider px-4 md:px-10">
@@ -278,7 +279,8 @@
 
     <!-- SECTION 3: ALBUM -->
     <section id="album" class="bg-primary py-24 px-6 flex justify-center items-center">
-        <div class="w-full max-w-5xl bg-[#ece6e6] rounded-xl shadow-2xl overflow-hidden border border-gray-300">
+    <div class="relative w-full max-w-5xl min-h-[600px]"> <div id="view-landing" class="w-full transition-all duration-500 ease-in-out">
+        <div class="bg-[#ece6e6] rounded-xl shadow-2xl overflow-hidden border border-gray-300">
             <div class="bg-[#f3f0f0] px-6 py-4 flex justify-between items-center border-b border-gray-300">
                 <span class="font-os font-bold text-gray-700 text-lg">Open your album</span>
                 <div class="flex space-x-2">
@@ -359,36 +361,39 @@
                 </div>
             </div>
         </div>
-    </section>
-    </div>
-
-    <!-- VIEW 2: GALLERY VIEW (Halaman Foto) -->
-    <div id="view-gallery" class="hidden-view min-h-screen bg-primary flex flex-col">
-        <div class="bg-accent p-6 flex items-center justify-between text-white shadow-md">
-            <button id="backBtn" class="flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition font-bold">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                <span>Kembali</span>
-            </button>
-            <div class="flex flex-col items-center">
-                <h2 id="gallery-title" class="text-3xl font-brand drop-shadow-sm">Folder Name</h2>
-            </div>
-            <!-- Hidden File Input -->
-            <label class="cursor-pointer bg-secondary px-6 py-2 rounded-full font-bold shadow-lg hover:scale-105 transition">
-                + Tambah Foto
-                <input type="file" id="photo-upload" class="hidden" accept="image/*" multiple>
-            </label>
+        </div>
         </div>
 
-        <!-- Area Foto -->
-        <div class="flex-grow p-8">
-            <div id="photo-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                <div id="empty-msg" class="col-span-full py-20 text-center">
-                    <div class="text-6xl mb-4">📸</div>
-                    <p class="text-gray-500 font-medium italic">Belum ada foto di folder ini. Klik tombol di atas untuk menambah foto lokal!</p>
+            <!-- VIEW 2: GALLERY VIEW (Halaman Foto) -->
+        <div id="view-gallery" class="absolute inset-0 hidden bg-secondary flex flex-col rounded-xl overflow-hidden">
+            <div class="bg-[#f3f0f0] p-6 flex items-center justify-between text-black shadow-md">
+                <button id="backBtn" class="flex items-center space-x-2 bg-strawberry/20 hover:bg-accent/30 px-4 py-2 rounded-full transition font-bold">
+                    <span class="material-symbols-outlined">arrow_circle_left</span><span>Back</span>
+                </button>
+                <div class="flex flex-col items-center">
+                    <h2 id="gallery-title" class="text-3xl font-brand drop-shadow-sm">Folder Name</h2>
+                </div>
+                <div class="flex space-x-2">
+                    <div class="w-4 h-4 rounded-full bg-black"></div>
+                    <div class="w-4 h-4 rounded-full bg-black"></div>
+                    <div class="w-4 h-4 rounded-full bg-black"></div>
+                </div>
+            </div>
+
+            <!-- Area Foto -->
+            <div class="flex-grow p-8">
+                <div id="photo-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div id="empty-msg" class="col-span-full py-20 text-center">
+                        <div class="flex-grow p-8 max-h-[600px] overflow-y-auto custom-scrollbar">
+                            <div id="photo-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </section>
 
     <div id="popSection" class="bg-primary h-screen mt-32 flex items-center justify-center">
         <h2 class="text-4xl font-brand text-pink-300">Section Selanjutnya... ✨</h2>
@@ -398,6 +403,11 @@
     <footer class="mt-20 h-80 text-center">
         <p class="bg-accent text-white opacity-60 text-sm">Made with ❤️ by Chikal, Najwa, Hana</p>
     </footer>
+
+<div id="photo-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 cursor-zoom-out">
+    <span class="absolute top-5 right-5 text-white text-4xl cursor-pointer hover:text-gray-300">&times;</span>
+    <img id="modal-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transform transition-transform duration-300 scale-95">
+</div>
 
 <script src="script.js"></script>
 </body>
