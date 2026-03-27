@@ -217,4 +217,115 @@ document.addEventListener('DOMContentLoaded', function() {
             };
         }
     }
+
+    //!SECTION SUPRISEEE
+    let scene, camera, renderer, box;
+    let clickCount = 0;
+    const targetClicks = 15;
+    const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+
+    window.onload = function() {
+        init3D();
+        animate();
+    }
+
+    function init3D() {
+        const container = document.getElementById('canvas-container');
+        scene = new THREE.Scene();
+        
+        camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.z = 4;
+
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+
+        // Lighting
+        const ambient = new THREE.AmbientLight(0xffffff, 0.7);
+        scene.add(ambient);
+        const pointLight = new THREE.PointLight(0xffffff, 0.8);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        // Box Geometry (Kado Merah)
+        const boxGeom = new THREE.BoxGeometry(1.8, 1.8, 1.8);
+        const boxMat = new THREE.MeshPhongMaterial({ color: 0xe11d48 }); // Rose 600
+        box = new THREE.Mesh(boxGeom, boxMat);
+        scene.add(box);
+
+        // Ribbon (Pita Kuning)
+        const ribbonMat = new THREE.MeshPhongMaterial({ color: 0xfde047 }); // Yellow 300
+        const vRibbon = new THREE.Mesh(new THREE.BoxGeometry(0.35, 1.82, 1.82), ribbonMat);
+        const hRibbon = new THREE.Mesh(new THREE.BoxGeometry(1.82, 0.35, 1.82), ribbonMat);
+        box.add(vRibbon, hRibbon);
+
+        // Event listener klik pada container
+        container.addEventListener('mousedown', onBoxClick);
+        window.addEventListener('resize', onWindowResize);
+    }
+
+    function onBoxClick() {
+        if (clickCount >= targetClicks) return;
+
+        clickCount++;
+        
+        // Update Progress Bar
+        const progressEl = document.getElementById('progress');
+        progressEl.style.width = (clickCount / targetClicks * 100) + '%';
+
+        // Animasi Guncang UI
+        const section = document.getElementById('surprise');
+        section.classList.add('shake-anim');
+        setTimeout(() => section.classList.remove('shake-anim'), 200);
+
+        // Animasi Box 3D
+        box.scale.set(1.15, 1.15, 1.15);
+        box.rotation.y += 0.4;
+        setTimeout(() => box.scale.set(1, 1, 1), 100);
+
+        if (clickCount >= targetClicks) {
+            triggerExplosion();
+        }
+    }
+
+    function triggerExplosion() {
+        let scale = 1;
+        const timer = setInterval(() => {
+            scale *= 1.25;
+            box.scale.set(scale, scale, scale);
+            box.rotation.z += 0.5;
+            if (scale > 40) {
+                clearInterval(timer);
+                showVideo();
+            }
+        }, 20);
+    }
+
+    function showVideo() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('surpriseVideo');
+        const header = document.getElementById('header-text');
+        
+        header.style.opacity = '0';
+        iframe.src = VIDEO_URL;
+        modal.classList.remove('scale-0');
+        modal.classList.add('scale-100');
+    }
+
+    function onWindowResize() {
+        const container = document.getElementById('canvas-container');
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        if (box && clickCount < targetClicks) {
+            box.rotation.y += 0.005;
+            box.rotation.x += 0.003;
+        }
+        renderer.render(scene, camera);
+    }
 });
