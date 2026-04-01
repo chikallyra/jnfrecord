@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.readAsDataURL(file);
         });
     });
-
+    
     // Tampil Foto
     function renderPhotos(folderName) {
         if (!views.grid) return;

@@ -135,7 +135,7 @@
             <div class="grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-8">
 
                 <!-- Figur 1 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID()" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/najwa/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -399,13 +399,9 @@
     </div>
     </section>
 
-    <section id="surprise" class="relative bg-secondary h-screen mt-32 flex flex-col items-center justify-center overflow-hidden border-y border-gray-200 shadow-inner">
+    <section id="surprise" class="relative bg-secondary h-screen flex flex-col items-center justify-center overflow-hidden border-y border-gray-200 shadow-inner">
         
-        <!-- Canvas Container (Tempat Kotak 3D) -->
         <div id="canvas-container" class="absolute inset-0 cursor-pointer z-0"></div>
-
-        <!-- UI Overlay (Instruksi & Progress) -->
-        <!-- Menggunakan 'absolute' bukannya 'fixed' agar hanya muncul di dalam section ini -->
         <div class="ui-overlay absolute inset-0 flex flex-col items-center justify-between p-12 pointer-events-none z-10">
             <div id="header-text" class="text-center transition-opacity duration-500">
                 <h1 class="text-3xl font-black text-gray-800 uppercase tracking-widest drop-shadow-sm">
@@ -427,6 +423,88 @@
     </footer>
 
 <!-- Modal modalan     -->
+
+<!-- Modal Pop-up -->
+<div id="idModal" class="fixed inset-0 bg-black/60 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+    
+    <div class="modal-show relative w-full max-w-2xl">
+        <!-- ID Card Main -->
+        <div class="card-bg rounded-[2.5rem] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl">
+            <!-- Watermark -->
+            <div class="watermark header-font">JNF</div>
+
+            <!-- Header Section -->
+            <div class="flex justify-between items-start mb-2">
+                <div class="flex items-baseline gap-6">
+                    <span class="header-font text-5xl font-black italic">JNF</span>
+                    <span class="text-xl md:text-2xl font-bold tracking-widest lowercase opacity-90">identificaton card</span>
+                </div>
+                <span class="text-2xl font-bold font-mono opacity-70">ID.001</span>
+            </div>
+
+            <!-- Garis Horizontal Atas -->
+            <div class="header-line"></div>
+
+            <!-- Content Body -->
+            <div class="flex flex-col md:flex-row mt-8 gap-10 items-center">
+                
+                <!-- Foto Profil Kotak -->
+                <div class="relative">
+                    <div class="w-44 h-44 md:w-52 md:h-52 bg-white rounded-lg shadow-lg overflow-hidden border-4 border-purple-200">
+                        <!-- Foto placeholder mirip karakter di gambar -->
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Najwa&hair=long&clothing=hoodie&backgroundColor=fdf2f8" 
+                                alt="Najwa Adinda" 
+                                class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Detail Info -->
+                <div class="flex-grow space-y-5 text-left w-full md:w-auto">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-purple-100">Name</p>
+                        <h2 class="text-3xl font-black">Najwa Adinda</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-widest text-purple-100">DOB</p>
+                            <p class="text-xl font-bold">13.06.04</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-widest text-purple-100">Position</p>
+                            <p class="text-xl font-bold">Data Analyst</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-purple-100">Nationality</p>
+                        <p class="text-xl font-bold">Cirebon</p>
+                    </div>
+                </div>
+
+                <!-- Barcode Vertikal Kanan (Sesuai Gambar) -->
+                <div class="barcode-container w-10 md:w-12 h-full flex items-center justify-center opacity-70">
+                    <!-- Membuat garis barcode acak -->
+                    <script>
+                        for(let i=0; i<30; i++) {
+                            let w = [4, 8, 2, 12][Math.floor(Math.random() * 4)];
+                            document.write(`<div class="barcode-strip" style="width: ${w}px"></div>`);
+                        }
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Tombol Tutup (X) -->
+        <button onclick="closeID()" class="absolute -top-4 -right-4 w-12 h-12 bg-white text-purple-600 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+</div>
 
 <!-- Photo Modal -->
 <div id="photo-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 cursor-zoom-out">
@@ -452,11 +530,36 @@
 </div>
 
 <script src="script.js"></script>
+
 <script>
     function closeSurprise() {
         // Reset state tanpa reload halaman penuh
         location.reload();
     }
+
+    //Modal ID
+    const modalId = document.getElementById('idModal');
+
+    function openID() {
+        modalId.classList.remove('hidden');
+        modalId.classList.add('flex');
+    }
+
+    function closeID() {
+        modalId.classList.add('hidden');
+        modalId.classList.remove('flex');
+    }
+
+    window.onclick = function(e) {
+        if (e.target == modalId) closeID();
+    }
+
+    //Get Data
+    fetch("../data-id.JSON")
+    .then(res => res.json())
+    .then(data => console.log(data))
+
+
 </script>
 </body>
 </html>
