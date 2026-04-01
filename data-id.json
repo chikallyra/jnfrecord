@@ -1,71 +1,90 @@
 [{
-    "id" : "1",
-    "nama" : "Najwa Adinda",
+    "id" : 1,
+    "idDisplay" : "ID-001",
+    "name" : "Najwa Adinda",
     "dob" : "13-06-04",
     "position" : "Data Analyst",
-    "nationality" : "Cirebon"
+    "nationality" : "Cirebon",
+    "color" : "#ca97e0"
 },
 {
-    "id" : "2",
-    "nama" : "Hana Eriza Ramadhani",
+    "id" : 2,
+    "idDisplay" : "ID-002",
+    "name" : "Hana Eriza Ramadhani",
     "dob" : "11-11-03",
-    "position" : "Process Management System Analyst Intern ",
-    "nationality" : "Purwekerto"
+    "position" : "Process Management System Analyst",
+    "nationality" : "Purwekerto",
+    "color" : "##faab77"
 },
 {
-    "id" : "3",
-    "nama" : "Fatimah Qurratu A'yun",
+    "id" : 3,
+    "idDisplay" : "ID-003",
+    "name" : "Fatimah Qurratu A'yun",
     "dob" : "4-09-02",
     "position" : "Quality Assurance",
-    "nationality" : "Makassar"
+    "nationality" : "Makassar",
+    "color" : "##58c373"
 },
 {
-    "id" : "4",
-    "nama" : "Chikal Lyra Saeni Putri",
+    "id" : 4,
+    "idDisplay" : "ID-004",
+    "name" : "Chikal Lyra Saeni Putri",
     "dob" : "07-10-03",
     "position" : "Web Developer",
-    "nationality" : "Kircon"
+    "nationality" : "Kircon",
+    "color" : "##5774bf"
 },
 {
-    "id" : "5",
-    "nama" : "Yussie Aulia",
+    "id" : 5,
+    "idDisplay" : "ID-005",
+    "name" : "Yussie Aulia",
     "dob" : "03-07-02",
     "position" : "Quality Control Processing",
-    "nationality" : "Manglayang"
+    "nationality" : "Manglayang",
+    "color" : "#fe92ed"
 },
 {
-    "id" : "6",
-    "nama" : "Elsya Nurvita Romdoni",
+    "id" : 6,
+    "idDisplay" : "ID-006",
+    "name" : "Elsya Nurvita Romdoni",
     "dob" : "20-11-02",
     "position" : "Quality Assurance",
-    "nationality" : "Banjaran"
+    "nationality" : "Banjaran",
+    "color" : "##88c4ec"
 },
 {
-    "id" : "7",
-    "nama" : "Alfonsa Maria Putri Kinasih",
+    "id" : 7,
+    "idDisplay" : "ID-007",
+    "name" : "Alfonsa Maria Putri Kinasih",
     "dob" : "unknow",
     "position" : "Data Analyst",
-    "nationality" : "Jakarta"
+    "nationality" : "Klaten"
 },
 {
-    "id" : "8",
-    "nama" : "Resa Natalia",
+    "id" : 8,
+    "idDisplay" : "ID-008",
+    "name" : "Resa Natalia",
     "dob" : "10-06-02",
     "position" : "Project Manager",
-    "nationality" : "Cibiru"
+    "nationality" : "Cibiru",
+    "color" : "#72d4c1"
 },
 {
-    "id" : "9",
-    "nama" : "Della Rista Tiani",
+    "id" : 9,
+    "idDisplay" : "ID-009",
+    "name" : "Della Rista Tiani",
     "dob" : "27-02-02",
     "position" : "Team Leader Dairy",
-    "nationality" : "Margahayu"
+    "nationality" : "Margahayu",
+    "color" : "#db6b6a"
 },
 {
-    "id" : "10",
-    "nama" : "Maya Nurazizah",
+    "id" : 10,
+    "idDisplay" : "ID-010",
+    "name" : "Maya Nurazizah",
     "dob" : "16-02-02",
     "position" : "Finance",
-    "nationality" : "Sumedang"
+    "nationality" : "Sumedang",
+    "color" : "#eac300"
 }
 ]

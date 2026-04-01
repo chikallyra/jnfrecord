@@ -117,7 +117,7 @@
     </main>
 
     <!-- SECTION 2: POP! (CHOOSE YOUR POP!) -->
-    <section id="pop" class="relative py-20 min-h-screen overflow-hidden">
+    <section id="popSection" class="relative py-20 min-h-screen overflow-hidden">
         <div class="absolute inset-0 bg-primary z-0"></div>
         
         <!-- Background Bergerak Menyerong (JPG/PNG Pattern) -->
@@ -135,7 +135,7 @@
             <div class="grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-8">
 
                 <!-- Figur 1 -->
-                <div onclick="openID()" class="figure-card flex flex-col items-center group">
+                <div onclick="openID(1, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/najwa/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -149,7 +149,7 @@
                 </div>
 
                 <!-- Figur 2 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(2, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/hana/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -163,7 +163,7 @@
                 </div>
 
                 <!-- Figur 3 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(3, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/fatim/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -177,7 +177,7 @@
                 </div>
 
                 <!-- Figur 4 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(4, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/chikal/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -191,7 +191,7 @@
                 </div>
 
                 <!-- Figur 5 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(5, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/yussie/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -205,7 +205,7 @@
                 </div>
 
                 <!-- Figur 6 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(6, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/elsya/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -219,7 +219,7 @@
                 </div>
 
                 <!-- Figur 7 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(7, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/7.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -233,7 +233,7 @@
                 </div>
 
                 <!-- Figur 8 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(8, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/resa/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -247,7 +247,7 @@
                 </div>
 
                 <!-- Figur 9 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(9, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/della/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -261,7 +261,7 @@
                 </div>
 
                 <!-- Figur 10 -->
-                <div class="figure-card flex flex-col items-center group">
+                <div onclick="openID(10, this)" class="figure-card flex flex-col items-center group">
                     <div class="relative">
                         <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-[100%]"></div>
                         <img src="img/maya/2.png" alt="Figur Najwa" class="w-50 h-44 object-contain relative z-10">
@@ -439,7 +439,7 @@
                     <span class="header-font text-5xl font-black italic">JNF</span>
                     <span class="text-xl md:text-2xl font-bold tracking-widest lowercase opacity-90">identificaton card</span>
                 </div>
-                <span class="text-2xl font-bold font-mono opacity-70">ID.001</span>
+                <span class="text-2xl font-bold font-mono opacity-70" id="idDisplay"></span>
             </div>
 
             <!-- Garis Horizontal Atas -->
@@ -462,23 +462,23 @@
                 <div class="flex-grow space-y-5 text-left w-full md:w-auto">
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-purple-100">Name</p>
-                        <h2 class="text-3xl font-black">Najwa Adinda</h2>
+                        <h2 class="text-3xl font-black" id="name"></h2>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <p class="text-xs font-bold uppercase tracking-widest text-purple-100">DOB</p>
-                            <p class="text-xl font-bold">13.06.04</p>
+                            <p class="text-xl font-bold" id="dob"></p>
                         </div>
                         <div>
                             <p class="text-xs font-bold uppercase tracking-widest text-purple-100">Position</p>
-                            <p class="text-xl font-bold">Data Analyst</p>
+                            <p class="text-xl font-bold" id="position"></p>
                         </div>
                     </div>
 
                     <div>
                         <p class="text-xs font-bold uppercase tracking-widest text-purple-100">Nationality</p>
-                        <p class="text-xl font-bold">Cirebon</p>
+                        <p class="text-xl font-bold" id="nationality"></p>
                     </div>
                 </div>
 
@@ -540,9 +540,35 @@
     //Modal ID
     const modalId = document.getElementById('idModal');
 
-    function openID() {
+    function openID(idKey, el) {
+        const element = el;
         modalId.classList.remove('hidden');
         modalId.classList.add('flex');
+
+        //Get Data
+        //fetch("data-id.JSON")
+        //.then(res => res.json())
+        //.then(data => {
+            //const result = data.find(item => item.id === idKey);
+            //console.log(result);
+
+            //let name = $(element).data('name');
+            //console.log(name);
+        //});
+        fetch("data-id.JSON")
+        .then(res => res.json())
+        .then(data => {
+            const result = data.find(item => item.id === idKey);
+            console.log(result);
+
+            console.log(result.name);
+            document.getElementById("idDisplay").innerText = result.idDisplay;
+            document.getElementById("name").innerText = result.name;
+            document.getElementById("dob").innerText = result.dob;
+            document.getElementById("position").innerText = result.position;
+            document.getElementById("nationality").innerText = result.nationality;
+
+        });
     }
 
     function closeID() {
@@ -553,12 +579,6 @@
     window.onclick = function(e) {
         if (e.target == modalId) closeID();
     }
-
-    //Get Data
-    fetch("../data-id.JSON")
-    .then(res => res.json())
-    .then(data => console.log(data))
-
 
 </script>
 </body>
