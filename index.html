@@ -545,29 +545,34 @@
         modalId.classList.remove('hidden');
         modalId.classList.add('flex');
 
-        //Get Data
-        //fetch("data-id.JSON")
-        //.then(res => res.json())
-        //.then(data => {
-            //const result = data.find(item => item.id === idKey);
-            //console.log(result);
+        console.log("Mencoba mengambil data...");
 
-            //let name = $(element).data('name');
-            //console.log(name);
-        //});
-        fetch("data-id.JSON")
-        .then(res => res.json())
+        fetch("data-id.json") // Pastikan namanya kecil semua sesuai file asli
+        .then(res => {
+            console.log("Status Respon:", res.status);
+            if (!res.ok) throw new Error("File JSON gak ketemu di server!");
+            return res.json();
+        })
         .then(data => {
-            const result = data.find(item => item.id === idKey);
-            console.log(result);
-
-            console.log(result.name);
-            document.getElementById("idDisplay").innerText = result.idDisplay;
-            document.getElementById("name").innerText = result.name;
-            document.getElementById("dob").innerText = result.dob;
-            document.getElementById("position").innerText = result.position;
-            document.getElementById("nationality").innerText = result.nationality;
-
+            console.log("Data Berhasil di-load:", data);
+            
+            // Pastikan idKey lo tipenya sama (String/Number) dengan yang ada di JSON
+            // Gunakan == (bukan ===) kalau ragu masalah tipe data
+            const result = data.find(item => item.id == idKey); 
+            
+            if (result) {
+                console.log("Data Ketemu:", result);
+                document.getElementById("idDisplay").innerText = result.idDisplay;
+                document.getElementById("name").innerText = result.name;
+                document.getElementById("dob").innerText = result.dob;
+                document.getElementById("position").innerText = result.position;
+                document.getElementById("nationality").innerText = result.nationality;
+            } else {
+                console.warn("ID tidak ditemukan di dalam list JSON. idKey lo:", idKey);
+            }
+        })
+        .catch(err => {
+            console.error("Waduh, Error Fetch:", err.message);
         });
     }
 
