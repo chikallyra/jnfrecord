@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let scene, camera, renderer, box;
     let clickCount = 0;
     const targetClicks = 15;
-    const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+    const VIDEO_URL = "https://youtu.be/xqX1x-kHwNw?si=1dXcjlbKIMDJkgW7";
 
     window.onload = function() {
         init3D();
