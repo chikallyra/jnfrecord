@@ -54,8 +54,8 @@
                 JnF <span class="text-primary">Dichive</span>
             </h1>
             <p class="mt-6 text-primary text-xl font-medium max-w-sm">
-                website ini dibuat agar kita terus...<br>
-                <span class="opacity-80 italic">lorem ipsum dolor si amet</span>
+                website ini dibuat biar kita selalu punya tempat untuk balik dan inget semuanya.<br>
+                <span class="opacity-80 italic">nothing really ends here.</span>
             </p>
         </div>
 
@@ -417,9 +417,57 @@
         </div>
     </section>
 
+    <section id="graduate" class="relative min-h-screen bg-primary flex flex-col items-center justify-start overflow-hidden border-y border-gray-200 shadow-inner py-16 md:py-24">
+        <div class="absolute inset-0 moving-bg-image opacity-70 animate-moving-diagonal z-10"></div>
+        <div class="absolute top-20 left-4 md:left-10 opacity-20 floating z-0 select-none pointer-events-none" style="width: 80px; md:width: 100px;">
+            <svg viewBox="0 0 100 100"><path fill="#f18da2" d="M50 0 C60 30 90 30 100 50 C90 70 60 70 50 100 C40 70 10 70 0 50 C10 30 40 30 50 0" /></svg>
+        </div>
+        <div class="absolute bottom-10 right-4 md:right-10 opacity-20 floating z-0 select-none pointer-events-none" style="width: 120px; md:width: 150px; animation-delay: 1s;">
+            <svg viewBox="0 0 100 100"><path fill="#85bb5e" d="M50 0 C60 30 90 30 100 50 C90 70 60 70 50 100 C40 70 10 70 0 50 C10 30 40 30 50 0" /></svg>
+        </div>
+
+        <div class="scallop-header relative z-10 flex flex-col items-center justify-center text-white px-4 text-center mb-12">
+            <h1 class="font-pop text-5xl text-biruGaruda md:text-7xl mb-4 drop-shadow-[5px_5px_0px_rgba(0,0,0,0.2)]">
+                THE GRADUATES
+            </h1>
+            <div class="inline-block bg-secondary/40 backdrop-blur-sm px-6 py-2 rounded-full border border-white/30">
+                <p class="font-brand text-xl md:text-2xl text-white">Intern of 2026</p>
+            </div>
+        </div>
+
+        <div class="container relative z-10 mx-auto px-6">
+            <div id="grad-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
+            </div>
+        </div>
+    </section>
+
     <!-- Simple Footer/Decoration -->
-    <footer class="mt-20 h-80 text-center">
+    <!-- <footer class="mt-20 h-80 text-center">
         <p class="bg-accent text-white opacity-60 text-sm">Made with ❤️ by Chikal, Najwa, Hana</p>
+    </footer> -->
+    <footer class="mt-20 bg-primary border-t border-gray-100 pt-16 pb-8">
+    <div class="container mx-auto px-6 text-center">
+        <div class="mb-12">
+            <img src="img/logo.png" class="logo-footer" alt="">
+            <!-- <h2 class="font-pop text-3xl text-biruGaruda mb-4">THE GRADUATES</h2> -->
+            <p class="font-brand text-gray-500 max-w-md mx-auto italic">
+                "Terima kasih atas dedikasi dan tawa selama masa magang 2026. Sampai jumpa di puncak kesuksesan!"
+            </p>
+        </div>
+
+        <hr class="border-gray-100 mb-8">
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-400 text-sm font-medium">
+                © 2026 Chikal. All Rights Reserved.
+            </p>
+            <div class="bg-biruGaruda/10 px-4 py-2 rounded-full">
+                <p class="text-biruGaruda text-sm font-bold">
+                    Made with ❤️ by <span class="text-pink-500">Chikal, Najwa, & Hana</span>
+                </p>
+            </div>
+        </div>
+    </div>
     </footer>
 
 <!-- Modal modalan     -->
@@ -429,14 +477,14 @@
     
     <div class="modal-show relative w-full max-w-2xl">
         <!-- ID Card Main -->
-        <div class="card-bg rounded-[2.5rem] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl">
+        <div class="card-bg bg-color-id rounded-[2.5rem] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl">
             <!-- Watermark -->
             <div class="watermark header-font">JNF</div>
-
             <!-- Header Section -->
-            <div class="flex justify-between items-start mb-2">
-                <div class="flex items-baseline gap-6">
-                    <span class="header-font text-5xl font-black italic">JNF</span>
+            <div class="flex justify-between items-center mb-2">
+                <div class="flex items-center gap-6">
+                    <!-- <span class="header-font text-5xl font-black italic">JNF</span> -->
+                    <img src="img/logo.png" class="logo-id" alt="">
                     <span class="text-xl md:text-2xl font-bold tracking-widest lowercase opacity-90">identificaton card</span>
                 </div>
                 <span class="text-2xl font-bold font-mono opacity-70" id="idDisplay"></span>
@@ -452,9 +500,13 @@
                 <div class="relative">
                     <div class="w-44 h-44 md:w-52 md:h-52 bg-white rounded-lg shadow-lg overflow-hidden border-4 border-purple-200">
                         <!-- Foto placeholder mirip karakter di gambar -->
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Najwa&hair=long&clothing=hoodie&backgroundColor=fdf2f8" 
+                        <!-- <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Najwa&hair=long&clothing=hoodie&backgroundColor=fdf2f8" 
                                 alt="Najwa Adinda" 
-                                class="w-full h-full object-cover">
+                                class="w-full h-full object-cover"> -->
+                        <img 
+                        class="img-id w-full h-full object-cover"
+                        src=""
+                        alt="profile">
                     </div>
                 </div>
 
@@ -567,6 +619,8 @@
                 document.getElementById("dob").innerText = result.dob;
                 document.getElementById("position").innerText = result.position;
                 document.getElementById("nationality").innerText = result.nationality;
+                document.querySelector('.bg-color-id').style.backgroundColor = result.color;
+                document.querySelector('.img-id').src = result.image;
             } else {
                 console.warn("ID tidak ditemukan di dalam list JSON. idKey lo:", idKey);
             }
@@ -585,6 +639,84 @@
         if (e.target == modalId) closeID();
     }
 
+</script>
+
+<script>
+    const graduates = [
+        { key: "najwa", name: "Najwa Adinda", title: "X.Da", color: "#ca97e0" },
+        { key: "hana", name: "Hana Eriza", title: "X.Pms", color: "#faab77" },
+        { key: "fatim", name: "Fatimah Qurratu A'yun", title: "X.Qa", color: "#58c373" },
+        { key: "maya", name: "Maya Nur Azizah", title: "X.F", color: "#eac300" },
+        { key: "yussie", name: "Yussie Aulia", title: "X.Qc", color: "#fe92ed" },
+        { key: "chikal", name: "Chikal Lyra Saeni Putri", title: "X.Wd", color: "#5774bf" },
+        { key: "della", name: "Della Rista Tiani", title: "T.L", color: "#db6b6a" },
+        { key: "resa", name: "Resa Natalia", title: "X.Pm", color: "#72d4c1" },
+        { key: "elsya", name: "Elsya Nurvita Romdoni", title: "X.Qa", color: "#88c4ec" }
+    ];
+
+    const grid = document.getElementById('grad-grid');
+
+    graduates.forEach((g, i) => {
+        const card = document.createElement('div');
+        card.className = 'cute-card';
+        
+        // Random rotate for scrapbook feel
+        const randomRot = (Math.random() * 4 - 2).toFixed(1);
+        card.style.transform = `rotate(${randomRot}deg)`;
+
+        card.innerHTML = `
+        <div class="flower-dec -top-4 -right-4" style="width: 35px;">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="${g.color}" opacity="0.8"/></svg>
+        </div>
+        
+        <div class="photo-frame p-1 bg-white">
+            <img src="img/${g.key}/1.png" alt="${g.name}" class="w-full aspect-square object-cover">
+        </div>
+
+        <div class="mt-4 mb-1 h-14 flex items-center justify-center relative">
+            <div class="washi-tape" style="background-color: ${g.color}; height: 28px; width: 85%;" onclick="peel(this)"></div>
+            
+            <div class="reveal-info text-center leading-tight">
+                <h3 class="font-brand text-base md:text-lg text-[var(--darkGrey)] font-bold">${g.name}</h3>
+                <p class="font-nutrition text-xs" style="color: ${g.color}">${g.title}</p>
+            </div>
+        </div>
+
+        <div class="absolute -bottom-3 -left-1 bg-white border border-black px-2 py-0.5 rounded-full shadow-sm rotate-[-5deg]">
+            <span class="font-brand text-[10px]">GRAD '26 ✨</span>
+        </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    function peel(el) {
+        el.classList.add('peeled');
+        
+        // Tambah partikel kecil (efek confetti sederhana)
+        const rect = el.getBoundingClientRect();
+        for(let i=0; i<5; i++) {
+            createSparkle(rect.left + rect.width/2, rect.top + rect.height/2);
+        }
+    }
+
+    function createSparkle(x, y) {
+        const s = document.createElement('div');
+        s.innerHTML = "✨";
+        s.style.position = 'fixed';
+        s.style.left = x + 'px';
+        s.style.top = y + 'px';
+        s.style.pointerEvents = 'none';
+        s.style.zIndex = '100';
+        document.body.appendChild(s);
+        
+        const destX = (Math.random() - 0.5) * 200;
+        const destY = (Math.random() - 0.5) * 200;
+        
+        s.animate([
+            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+            { transform: `translate(${destX}px, ${destY}px) scale(0)`, opacity: 0 }
+        ], { duration: 1000, easing: 'ease-out' }).onfinish = () => s.remove();
+    }
 </script>
 </body>
 </html>

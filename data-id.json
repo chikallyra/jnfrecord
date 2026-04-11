@@ -5,7 +5,8 @@
     "dob" : "13-06-04",
     "position" : "Data Analyst",
     "nationality" : "Cirebon",
-    "color" : "#ca97e0"
+    "color" : "#ca97e0",
+    "image" : "img/najwa/1.png"
 },
 {
     "id" : 2,
@@ -14,7 +15,8 @@
     "dob" : "11-11-03",
     "position" : "Process Management System Analyst",
     "nationality" : "Purwokerto",
-    "color" : "##faab77"
+    "color" : "#faab77",
+    "image" : "img/hana/1.png"
 },
 {
     "id" : 3,
@@ -23,7 +25,8 @@
     "dob" : "4-09-02",
     "position" : "Quality Assurance",
     "nationality" : "Makassar",
-    "color" : "##58c373"
+    "color" : "#58c373",
+    "image" : "img/fatim/1.png"
 },
 {
     "id" : 4,
@@ -32,7 +35,8 @@
     "dob" : "07-10-03",
     "position" : "Web Developer",
     "nationality" : "Kircon",
-    "color" : "##5774bf"
+    "color" : "#5774bf",
+    "image" : "img/chikal/1.png"
 },
 {
     "id" : 5,
@@ -41,7 +45,8 @@
     "dob" : "03-07-02",
     "position" : "Quality Control Processing",
     "nationality" : "Manglayang",
-    "color" : "#fe92ed"
+    "color" : "#fe92ed",
+    "image" : "img/yussie/1.png"
 },
 {
     "id" : 6,
@@ -50,7 +55,8 @@
     "dob" : "20-11-02",
     "position" : "Quality Assurance",
     "nationality" : "Banjaran",
-    "color" : "##88c4ec"
+    "color" : "##88c4ec",
+    "image" : "img/elsya/1.png"
 },
 {
     "id" : 7,
@@ -58,7 +64,8 @@
     "name" : "Alfonsa Maria Putri Kinasih",
     "dob" : "23-05-02",
     "position" : "Data Analyst",
-    "nationality" : "Klaten"
+    "nationality" : "Klaten",
+    "image" : "img/7.png"
 },
 {
     "id" : 8,
@@ -67,7 +74,8 @@
     "dob" : "10-06-02",
     "position" : "Project Manager",
     "nationality" : "Cibiru",
-    "color" : "#72d4c1"
+    "color" : "#72d4c1",
+    "image" : "img/resa/1.png"
 },
 {
     "id" : 9,
@@ -76,7 +84,8 @@
     "dob" : "27-02-02",
     "position" : "Team Leader Dairy",
     "nationality" : "Margahayu",
-    "color" : "#db6b6a"
+    "color" : "#db6b6a",
+    "image" : "img/della/1.png"
 },
 {
     "id" : 10,
@@ -85,6 +94,7 @@
     "dob" : "16-02-02",
     "position" : "Finance",
     "nationality" : "Sumedang",
-    "color" : "#eac300"
+    "color" : "#eac300",
+    "image" : "img/maya/1.png"
 }
 ]

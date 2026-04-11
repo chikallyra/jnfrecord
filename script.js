@@ -7,7 +7,8 @@ tailwind.config = {
                 accent: '#85bb5e',   
                 burahay: '#ba2027',
                 strawberry: '#ef2271',
-                darkGrey: '#313742'
+                darkGrey: '#313742',
+                biruGaruda: '#004b93'
             },
             fontFamily: {
                 brand: ['"Yeseva One"', 'serif'],
