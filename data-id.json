@@ -22,7 +22,7 @@
     "id" : 3,
     "idDisplay" : "ID-003",
     "name" : "Fatimah Qurratu A'yun",
-    "dob" : "4-09-02",
+    "dob" : "04-09-03",
     "position" : "Quality Assurance",
     "nationality" : "Makassar",
     "color" : "#58c373",
@@ -91,9 +91,9 @@
     "id" : 10,
     "idDisplay" : "ID-010",
     "name" : "Maya Nurazizah",
-    "dob" : "16-02-02",
+    "dob" : "16-02-03",
     "position" : "Finance",
-    "nationality" : "Sumedang",
+    "nationality" : "Panyileukan",
     "color" : "#eac300",
     "image" : "img/maya/1.png"
 }
